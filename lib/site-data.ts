@@ -807,7 +807,7 @@ export const safety = {
 
 // Verified working source images used across the website.
 export const images = {
-  heroSkyline: "/images/ordo-engineering-skyline-dubai.webp",
+  heroSkyline: "/images/dubai-city.webp",
   districtCoolingPipes: "/images/district-cooling-piping-infrastructure.webp",
   sustainability: "/images/sustainable-building-engineering-solutions.webp",
   safety: "/images/workplace-safety-zero-harm-engineering.webp",
