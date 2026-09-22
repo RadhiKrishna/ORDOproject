@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { site } from "@/lib/site-data";
 import Icon from "@/components/ui/Icon";
@@ -63,13 +64,23 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 border-b border-line2 bg-cloud/90 backdrop-blur-md">
       <div className="max-w-content mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-baseline gap-2 focus-ring rounded">
-          <span className="font-display font-semibold tracking-tight text-lg text-slate">
-            {site.name}
-          </span>
-          <span className="hidden sm:inline font-mono text-[9px] tracking-[0.2em] text-slate2 uppercase">
-            Technical Services
-          </span>
+        <Link href="/" className="flex items-center gap-2.5 focus-ring rounded group">
+          <Image
+            src="/images/logo.png"
+            alt="ORDO Logo"
+            width={34}
+            height={34}
+            className="w-8 h-8 sm:w-8.5 sm:h-8.5 object-contain transition-transform duration-200 group-hover:scale-105 shrink-0"
+            priority
+          />
+          <div className="flex items-baseline gap-2">
+            <span className="font-display font-semibold tracking-tight text-lg sm:text-xl text-slate">
+              {site.name}
+            </span>
+            <span className="hidden sm:inline font-mono text-[9px] tracking-[0.2em] text-slate2 uppercase">
+              Technical Services
+            </span>
+          </div>
         </Link>
 
         <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-7">
