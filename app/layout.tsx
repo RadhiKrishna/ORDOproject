@@ -3,6 +3,7 @@ import { Jost, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import { site } from "@/lib/site-data";
 
 const display = Jost({
@@ -85,6 +86,7 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: site.fullName,
   url: siteUrl,
+  telephone: site.phone,
   email: `mailto:${site.email}`,
   address: {
     "@type": "PostalAddress",
@@ -120,6 +122,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

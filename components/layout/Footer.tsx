@@ -44,6 +44,10 @@ export default function Footer() {
           <p className="text-mute text-xs">
             {site.location}
             <span className="mx-2 text-line">|</span>
+            <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="hover:text-gold transition-colors">
+              {site.phone}
+            </a>
+            <span className="mx-2 text-line">|</span>
             <a href={`mailto:${site.email}`} className="hover:text-gold transition-colors">
               {site.email}
             </a>
