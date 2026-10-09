@@ -85,21 +85,24 @@ them filled in now.
 
 ## Wiring up the contact form
 
-`components/sections/ContactForm.tsx` currently opens a pre-filled `mailto:`
-link with the form data on submit -- it is honest (no fake "message sent"
-confirmation) and works with zero backend, but it depends on the visitor
-having a desktop email client configured. For a more reliable, form-native
-experience, two common upgrades:
+The contact form in `components/sections/ContactForm.tsx` is wired to [Web3Forms](https://web3forms.com), delivering form submissions directly as email notifications without requiring custom backend servers or database infrastructure. This works seamlessly with both static export (`output: "export"`) and standard Node.js server hosting.
 
-1. **Next.js API route** -- add `app/api/contact/route.ts` that receives the
-   POST body and emails it (e.g. via Resend, SendGrid, or Nodemailer), then
-   call that route's URL from `handleSubmit` in `ContactForm.tsx` using
-   `fetch`. Needs a Node server (not compatible with static `output: export`).
-2. **Form service** -- point the form at a service like Formspree, Web3Forms
-   or Getform (they give you an endpoint URL, no backend code needed). Works
-   fine with a fully static export.
+### Setup Instructions
 
-Pick whichever fits your hosting plan and I can wire it in.
+1. **Get an Access Key**:
+   - Visit [web3forms.com](https://web3forms.com) and create an access key for `info@ordotechnical.com`.
+2. **Configure Local Environment**:
+   - Copy `.env.example` to `.env.local` (already gitignored):
+     ```bash
+     NEXT_PUBLIC_WEB3FORMS_KEY=your-access-key-here
+     ```
+3. **Configure Production Environment**:
+   - Add `NEXT_PUBLIC_WEB3FORMS_KEY` to your hosting platform's environment variables (e.g. Vercel, Netlify, Cloudflare Pages) and redeploy.
+
+### Features
+- **Spam Protection**: Includes a hidden `"botcheck"` honeypot checkbox that prevents bots from triggering submissions.
+- **State Handling**: Manages `"idle"`, `"sending"`, `"sent"`, and `"error"` states with appropriate button states and feedback.
+- **Fallback**: Displays an inline alert with a direct `mailto:` link if network or submission errors occur.
 
 ## Pre-delivery audit (see full report in chat)
 
