@@ -27,10 +27,6 @@ const mono = IBM_Plex_Mono({
   display: "swap",
 });
 
-// NOTE: site.website is currently a placeholder domain
-// (www.ordotechnical.com) pending the client's real production domain.
-// Update lib/site-data.ts once the real domain is confirmed -- this powers
-// metadataBase, canonical URLs, Open Graph, sitemap.ts and robots.ts.
 const siteUrl = `https://${site.website}`;
 
 export const metadata: Metadata = {
@@ -86,8 +82,22 @@ const organizationJsonLd = {
   "@type": "Organization",
   name: site.fullName,
   url: siteUrl,
-  telephone: site.phone,
+  telephone: site.customerServicePhone,
   email: `mailto:${site.email}`,
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: site.operationsPhone,
+      contactType: "operations",
+      areaServed: "AE",
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: site.customerServicePhone,
+      contactType: "customer service",
+      areaServed: "AE",
+    },
+  ],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Dubai",

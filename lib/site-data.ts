@@ -7,12 +7,15 @@ export const site = {
   name: "ORDO",
   fullName: "Ordo Technical Services LLC",
   tagline: "Where Precision Meets Excellence",
-  phone: "+971 50 360 7987",
-  emergencyPhone: "+971 50 360 7987",
-  whatsapp: "+971 50 360 7987",
-  whatsappRaw: "971503607987",
-  email: "info@ordotechnical.com",
-  website: "www.ordotechnical.com",
+  phone: "+971 54 265 1375",
+  customerServicePhone: "+971 54 265 1375",
+  customerCarePhone: "+971 54 265 1375",
+  operationsPhone: "+971 54 263 4995",
+  emergencyPhone: "+971 54 263 4995",
+  whatsapp: "+971 54 265 1375",
+  whatsappRaw: "971542651375",
+  email: "info@ordo.ae",
+  website: "www.ordo.ae",
   location: "Dubai, United Arab Emirates",
 };
 
@@ -78,7 +81,18 @@ export const values = [
 
 export const contactChannels: { icon: IconName; label: string; value: string; href?: string }[] = [
   { icon: "pin", label: "Location", value: "Dubai, United Arab Emirates" },
-  { icon: "phone", label: "Phone", value: site.phone, href: `tel:${site.phone.replace(/\s/g, "")}` },
+  {
+    icon: "phone",
+    label: "Operations (24/7)",
+    value: site.operationsPhone,
+    href: `tel:${site.operationsPhone.replace(/\s/g, "")}`,
+  },
+  {
+    icon: "phone",
+    label: "Customer Service",
+    value: site.customerServicePhone,
+    href: `tel:${site.customerServicePhone.replace(/\s/g, "")}`,
+  },
   {
     icon: "whatsapp",
     label: "WhatsApp",
@@ -87,12 +101,6 @@ export const contactChannels: { icon: IconName; label: string; value: string; hr
   },
   { icon: "chat", label: "Email", value: site.email, href: `mailto:${site.email}` },
   { icon: "layers", label: "Website", value: site.website, href: `https://${site.website}` },
-  {
-    icon: "clock",
-    label: "24/7 Emergency Line",
-    value: site.emergencyPhone,
-    href: `tel:${site.emergencyPhone.replace(/\s/g, "")}`,
-  },
 ];
 
 export const serviceOptions = [

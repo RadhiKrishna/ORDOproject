@@ -147,11 +147,12 @@ export default function Navbar() {
         </nav>
 
         <a
-          href={`tel:${site.emergencyPhone.replace(/\s/g, "")}`}
+          href={`tel:${site.customerServicePhone.replace(/\s/g, "")}`}
           className="hidden lg:inline-flex items-center gap-2 text-xs font-mono text-slate border border-gold/40 rounded-full px-4 py-2 hover:border-gold hover:text-gold transition-colors focus-ring"
+          title={`Call 24/7 Emergency `}
         >
           <Icon name="phone" className="w-3.5 h-3.5 text-gold" />
-          24/7 Emergency
+          <span>24/7 Emergency  </span>
         </a>
 
         <button
@@ -210,13 +211,29 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          <a
-            href={`tel:${site.emergencyPhone.replace(/\s/g, "")}`}
-            className="mt-4 pt-4 border-t border-line2 text-sm font-mono text-gold flex items-center gap-2"
-          >
-            <Icon name="phone" className="w-4 h-4 text-gold" />
-            <span>24/7 Emergency — {site.emergencyPhone}</span>
-          </a>
+          <div className="mt-4 pt-4 border-t border-line2 flex flex-col gap-2.5">
+            <a
+              href={`tel:${site.customerServicePhone.replace(/\s/g, "")}`}
+              className="text-xs font-mono text-gold flex items-center gap-2.5 hover:text-gold2 transition-colors py-1"
+            >
+              <Icon name="phone" className="w-4 h-4 text-gold shrink-0" />
+              <span>24/7 Emergency Customer: {site.customerServicePhone}</span>
+            </a>
+            <a
+              href={`tel:${site.operationsPhone.replace(/\s/g, "")}`}
+              className="text-xs font-mono text-slate flex items-center gap-2.5 hover:text-gold transition-colors py-1"
+            >
+              <Icon name="phone" className="w-4 h-4 text-gold shrink-0" />
+              <span>Operations: {site.operationsPhone}</span>
+            </a>
+            <a
+              href={`mailto:${site.email}`}
+              className="text-xs font-mono text-slate2 flex items-center gap-2.5 hover:text-gold transition-colors py-1"
+            >
+              <Icon name="chat" className="w-4 h-4 text-gold shrink-0" />
+              <span>{site.email}</span>
+            </a>
+          </div>
         </nav>
       )}
     </header>

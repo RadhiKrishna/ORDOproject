@@ -27,14 +27,25 @@ export default function CTA() {
           <Button href="/contact" variant="secondary-dark">
             Request a Service
           </Button>
-          <div className="text-sm text-paper/80 font-mono sm:ml-2">
-            <p className="text-xs text-mute">24/7 Emergency Support</p>
-            <a
-              href={`tel:${site.emergencyPhone.replace(/\s/g, "")}`}
-              className="text-gold hover:text-gold2 transition-colors inline-block"
-            >
-              {site.emergencyPhone}
-            </a>
+          <div className="text-xs text-paper/80 font-mono sm:ml-2 flex flex-col gap-1.5">
+            <div>
+              <span className="text-mute">Operations (24/7): </span>
+              <a
+                href={`tel:${site.operationsPhone.replace(/\s/g, "")}`}
+                className="text-gold hover:text-gold2 transition-colors inline-block"
+              >
+                {site.operationsPhone}
+              </a>
+            </div>
+            <div>
+              <span className="text-mute">Customer Service: </span>
+              <a
+                href={`tel:${site.customerServicePhone.replace(/\s/g, "")}`}
+                className="text-paper/90 hover:text-gold transition-colors inline-block"
+              >
+                {site.customerServicePhone}
+              </a>
+            </div>
           </div>
         </div>
       </Reveal>

@@ -72,14 +72,21 @@ export default function ContactForm() {
         <p className="text-slate2 text-sm mt-2">
           We have received your enquiry and will get back to you shortly.
         </p>
-        {site.phone && (
+        {site.operationsPhone && (
           <p className="text-slate2 text-xs mt-4 pt-4 border-t border-line2">
-            For urgent matters, call us directly at{" "}
+            For urgent matters, contact Operations at{" "}
             <a
-              href={`tel:${site.phone.replace(/\s+/g, "")}`}
+              href={`tel:${site.operationsPhone.replace(/\s+/g, "")}`}
               className="text-gold hover:text-gold2 font-medium"
             >
-              {site.phone}
+              {site.operationsPhone}
+            </a>{" "}
+            or Customer Service at{" "}
+            <a
+              href={`tel:${site.customerServicePhone.replace(/\s+/g, "")}`}
+              className="text-gold hover:text-gold2 font-medium"
+            >
+              {site.customerServicePhone}
             </a>
             .
           </p>

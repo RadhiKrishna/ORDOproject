@@ -37,30 +37,49 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-line flex flex-wrap items-center justify-between gap-4">
-          <p className="text-mute text-xs">
+        <div className="mt-8 pt-6 border-t border-line flex flex-wrap items-center justify-between gap-4 text-xs text-mute">
+          <p>
             © {new Date().getFullYear()} {site.fullName}. All rights reserved.
           </p>
-          <p className="text-mute text-xs">
-            {site.location}
-            <span className="mx-2 text-line">|</span>
-            <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="hover:text-gold transition-colors">
-              {site.phone}
-            </a>
-            <span className="mx-2 text-line">|</span>
-            <a href={`mailto:${site.email}`} className="hover:text-gold transition-colors">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <span>{site.location}</span>
+            <span className="text-line hidden sm:inline">|</span>
+            <span>
+              Operations:{" "}
+              <a
+                href={`tel:${site.operationsPhone.replace(/\s/g, "")}`}
+                className="hover:text-gold transition-colors text-paper/85"
+              >
+                {site.operationsPhone}
+              </a>
+            </span>
+            <span className="text-line hidden sm:inline">|</span>
+            <span>
+              Customer Service:{" "}
+              <a
+                href={`tel:${site.customerServicePhone.replace(/\s/g, "")}`}
+                className="hover:text-gold transition-colors text-paper/85"
+              >
+                {site.customerServicePhone}
+              </a>
+            </span>
+            <span className="text-line hidden sm:inline">|</span>
+            <a
+              href={`mailto:${site.email}`}
+              className="hover:text-gold transition-colors text-paper/85"
+            >
               {site.email}
             </a>
-            <span className="mx-2 text-line">|</span>
+            <span className="text-line hidden sm:inline">|</span>
             <a
               href={`https://${site.website}`}
-              className="hover:text-gold transition-colors"
+              className="hover:text-gold transition-colors text-paper/85"
               target="_blank"
               rel="noopener noreferrer"
             >
               {site.website}
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

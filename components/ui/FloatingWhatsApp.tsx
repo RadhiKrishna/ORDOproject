@@ -3,7 +3,7 @@
 import { site } from "@/lib/site-data";
 
 export default function FloatingWhatsApp() {
-  const whatsappNumber = site.whatsappRaw || "971503607987";
+  const whatsappNumber = site.whatsappRaw || "971542651375";
   const defaultMessage = encodeURIComponent(
     "Hello ORDO Technical Services, I would like to inquire about your services."
   );

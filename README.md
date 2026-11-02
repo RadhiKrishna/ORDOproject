@@ -90,7 +90,7 @@ The contact form in `components/sections/ContactForm.tsx` is wired to [Web3Forms
 ### Setup Instructions
 
 1. **Get an Access Key**:
-   - Visit [web3forms.com](https://web3forms.com) and create an access key for `info@ordotechnical.com`.
+   - Visit [web3forms.com](https://web3forms.com) and create an access key for `info@ordo.ae`.
 2. **Configure Local Environment**:
    - Copy `.env.example` to `.env.local` (already gitignored):
      ```bash
