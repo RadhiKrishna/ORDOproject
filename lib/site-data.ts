@@ -111,14 +111,6 @@ export const serviceOptions = [
   "General Enquiry",
 ];
 
-export const responseTimeCommitment = [
-  { priority: "Critical", time: "Within 1 Hour", situation: "Cooling supply to customers affected" },
-  { priority: "Urgent", time: "Within 4 Hours", situation: "Major fault with risk of imminent failure" },
-  { priority: "High", time: "Within 8 Hours", situation: "Significant fault without immediate risk" },
-  { priority: "Routine", time: "Within 48 Hours", situation: "Minor issues and non-critical items" },
-  { priority: "Planned", time: "Scheduled", situation: "Preventive servicing as agreed" },
-];
-
 export const electromechanicalDetail = [
   {
     n: "01",
@@ -622,7 +614,6 @@ export const districtCoolingServices = [
     imageAlt: "Structured long-term maintenance contracts for district cooling operators",
     coverageTable: true,
     extraList: true,
-    responseTable: true,
   },
   {
     code: "DC · 07",

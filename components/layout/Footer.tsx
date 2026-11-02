@@ -18,7 +18,7 @@ export default function Footer() {
               />
               <p className="font-display text-lg text-paper font-medium">
                 {site.name}
-                <span className="text-gold">.</span>
+                
               </p>
             </div>
             <p className="text-mute text-xs mt-1.5">{site.tagline}</p>

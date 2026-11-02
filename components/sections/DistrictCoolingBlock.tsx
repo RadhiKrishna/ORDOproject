@@ -3,7 +3,6 @@ import Reveal from "@/components/ui/Reveal";
 import {
   districtCoolingWhatIsCovered,
   districtCoolingWhatYouGet,
-  responseTimeCommitment,
 } from "@/lib/site-data";
 
 export type DCGroup = {
@@ -19,7 +18,6 @@ export type DCService = {
   groups?: DCGroup[];
   coverageTable?: boolean;
   extraList?: boolean;
-  responseTable?: boolean;
   image?: string;
   imageAlt?: string;
 };
@@ -146,33 +144,6 @@ export default function DistrictCoolingBlock({
               </li>
             ))}
           </ul>
-        </div>
-      )}
-
-      {service.responseTable && (
-        <div className="mt-12">
-          <p className="font-mono text-xs text-gold uppercase tracking-wide mb-4">
-            Our Response Time Commitment
-          </p>
-          <div className="border border-line2 rounded-lg overflow-hidden">
-            <div className="grid grid-cols-3 bg-sand text-xs font-mono uppercase tracking-wide text-slate2 px-5 py-3">
-              <span>Priority</span>
-              <span>Response Time</span>
-              <span className="hidden sm:block">Situation</span>
-            </div>
-            {responseTimeCommitment.map((r) => (
-              <div
-                key={r.priority}
-                className="grid grid-cols-3 items-center px-5 py-3.5 border-t border-line2"
-              >
-                <span className="text-slate text-sm">{r.priority}</span>
-                <span className="text-gold text-sm">{r.time}</span>
-                <span className="hidden sm:block text-slate2 text-sm">
-                  {r.situation}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       )}
     </Reveal>
